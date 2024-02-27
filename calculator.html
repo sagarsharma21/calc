@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 400px;
+            min-width: 400px;
+        }
+        .title{
+            margin-bottom: 10px;
+            text-align: center;
+            width: 210px;
+            color: royalblue;
+            text-decoration: wavy;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: x-large;           
+        }
+        input[type="button"]{
+            background-color: black;
+            color: white;
+            border: solid black 2px;
+            width: 100%;
+        }
+        /* .table{
+            width: 400 px;
+            border: 2px black solid;
+
+        } */
+        
+        #box{
+            border: 1px solid green;
+        }
+        input[type="text"] {
+            border-radius: 5px;
+            background-color: white;
+            border: 2px solid green;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="title" >Calculator</div>
+    <table border="0" class="table">
+        <tr>
+            <td colspan="3"><input type="text" id="box" ></td>
+            <td><input type="button" onclick="clears()" value="C"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="display('7')" value="7"/></td>
+            <td><input type="button" onclick="display('8')" value="8"/></td>
+            <td><input type="button" onclick="display('9')" value="9"/></td>  
+            <td><input type="button" onclick="display('+')" value="+"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="display('4')" value="4"></td>
+            <td><input type="button" onclick="display('5')" value="5"></td>
+            <td><input type="button" onclick="display('6')" value="6"></td>
+            <td><input type="button" onclick="display('*')" value="*"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="display('1')" value="1"/></td>
+            <td><input type="button" onclick="display('2')" value="2"></td>
+            <td><input type="button" onclick="display('3')" value="3"></td>
+            <td><input type="button" onclick="display('/')" value="/"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="display('.')" value="."/></td>
+            <td><input type="button" onclick="display('0')" value="0"></td>
+            <td><input type="button" onclick="display('*')" value="*"></td>
+            <td><input type="button" onclick="calculate()" value="="></td>
+        </tr>
+       
+    </table>
+    <!--Business Logic-->
+    <script type="text/javascript">
+            
+           
+        function display(input){
+             document.getElementById("box").value+=input;
+            }
+
+        function calculate(){
+            let x = document.getElementById("box").value;
+           //console.log(x);
+           let y = eval(x);
+           document.getElementById("box").value = y;
+            }    
+
+        function clears(){
+            document.getElementById("box").value=" ";
+           
+        }    
+    </script>
+   
+</body>
+</html>
